@@ -1,0 +1,5 @@
+{
+  "shell_cmd": "g++.exe -std=c++17 \"${file}\" -o \"${file_base_name}.exe\" && \"${file_base_name}.exe\" < in.txt > out.txt",
+  "selector": "source.cpp",
+  "working_dir": "$file_path"
+}

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+int binExpoRecMod(int a, int b, int m){
+  if(b==0) return 1LL;
+  int ans = binExpoRec(a, b/2LL);
+  if(b&1){ // if b is ODD
+     return ((a * ((ans * ans)%m))%m);
+  }else{
+    return ((ans * ans)%m);
+  }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_binary_expon_mod_recu</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

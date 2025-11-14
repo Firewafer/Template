@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+const int _max = (int)5e6 + 10;
+vector<bool> sei(_max);
+vector<int> prime;
+
+void seive(){
+    
+    for(int i=2; i*i <= _max; i++){
+      if(sei[i] ==  false){
+        for(int j = i * i; j<= _max; j += i){
+          sei[j] = true;
+        }
+      }
+    }
+
+    for(int i = 2; i < _max; i++)
+      if(sei[i] ==  false) prime.pb(i);
+}
+
+const int mx = (int)5e6 + 10;
+vector<int> phi(mx + 100);
+
+void calPhi(){
+   
+    for ( int i = 1; i <= mx; i++ ) phi[i] = i;
+
+    for ( auto p : prime ) {
+        for ( int j = p; j <= mx; j += p ) {
+            phi[j] /= p;
+            phi[j] *= (p-1);
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_euler_phi_func</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

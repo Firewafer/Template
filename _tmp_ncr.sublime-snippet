@@ -1,0 +1,64 @@
+<snippet>
+	<content><![CDATA[
+  int mod(int a, int m){
+    return ((a%m)+m) % m;
+  }
+  int modAdd(int a, int b, int m){
+    return mod(mod(a,m) + mod(b,m), m);
+  }
+  int modSub(int a, int b, int m){
+    return mod(mod(a,m) - mod(b,m) + m, m);
+  }
+  int modMul(int a, int b, int m){
+    return mod(mod(a,m) * mod(b,m), m);
+  }
+
+const int N = (int)2e5 + 5;
+vector<int> fact(N);
+
+// Call preCalc();
+
+void precalc(){
+  fact[0] = 1;
+  for(int i=1;i<N;i++){
+     fact[i]=modMul(fact[i-1LL],i, m);
+  }
+  
+}
+int binExpoItrMod(int a, int b, int m){
+  int ans = 1LL;
+  while(b>0){
+    if(b&1){
+      ans = (ans*a) % m;
+    }
+    a = (a*a)%m;
+    b >>= 1;
+  }
+  return ans;
+}
+
+int modInverse(int x, int m){
+  return binExpoItrMod(x,m-2LL, m);
+
+  // (b^-1 % m) = (b^(m-2)) % m
+}
+
+int modDivide(int a, int b, int m){
+    return modMul(a,modInverse(b, m), m);
+}
+
+int nCr(int n, int r, int m){
+  if (r < 0 || r > n) return 0;
+  return modDivide(fact[n],modMul(fact[r],fact[n-r], m), m);
+}
+
+int nPr(int n, int r, int m){
+  if (r < 0 || r > n) return 0;
+  return modDivide(fact[n],fact[n-r], m);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_ncr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

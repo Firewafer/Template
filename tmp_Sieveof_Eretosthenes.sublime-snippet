@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+const int _max = (int)1e5 + 5;
+vector<bool> sei(_max);
+void seive(){
+    
+    for(int i=2; i*i <= _max; i++){
+      if(sei[i] ==  false){
+        for(int j = i * i; j<= _max; j += i){
+          sei[j] = true;
+        }
+      }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_Sieveof_Eretosthenes</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope>
+</snippet>

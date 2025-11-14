@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+int rangeBitwiseAnd(int left, int right) {
+    for(int i = 0; i < 32; i++){
+      if(left != right){
+        left = (left >> 1);
+        right = (right >> 1);
+      }else{
+        int val=  (left << i);
+        return val;
+      }
+    }
+
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_range_BitwiseAnd</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope>
+</snippet>

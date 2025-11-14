@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+int _pow(int base, int power){
+  int res = 1;
+  while(power){
+     if(power&1){
+      res = res * base;
+      power--;
+     }else{
+      base = base * base;
+      power =  power / 2;
+     }
+  }
+  return res;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_binary_exponential</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	 <scope>source.c++</scope>
+</snippet>

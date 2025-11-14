@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+long double dis(int ax, int ay, int bx, int by){
+  int sum1 = (bx-ax) * (bx-ax);
+  int sum2 = (by-ay) * (by-ay);
+  long double ans = sqrt((sum1+sum2));
+  return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_dis_2points</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	 <scope>source.c++</scope>
+</snippet>

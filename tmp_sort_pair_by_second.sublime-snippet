@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+bool sortbysec(const pair<int,int> &a, const pair<int,int> &b)
+{
+    return (a.second < b.second);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_sort_pair_by_second</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

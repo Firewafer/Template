@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+int mod(int a, int m){
+  return ((a%m)+m) % m;
+}
+int modAdd(int a, int b, int m){
+  return mod(mod(a,m) + mod(b,m), m);
+}
+int modSub(int a, int b, int m){
+  return mod(mod(a,m) - mod(b,m) + m, m);
+}
+int modMul(int a, int b, int m){
+  return mod(mod(a,m) * mod(b,m), m);
+}
+
+const int N=2e5+2;
+vector<int> fact;
+
+void precalc(){
+  int m = (int)1e9+7;
+  fact[0]=1;
+  for(int i=1;i<N;i++){
+     fact[i]=modMul(fact[i-1],i, m);
+  }
+}
+]]></content>
+		<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_factorial_precal_mod</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

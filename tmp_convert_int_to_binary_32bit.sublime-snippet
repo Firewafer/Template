@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+string convIntToBinary(int n){
+  string binnum;
+  // i = 31 for INT
+  // i = 63 for LONG LONG
+  for(int i=31; i>=0; i--){
+    binnum += to_string(((n>>i) & 1));
+  }
+  return binnum;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_convert_int_to_binary_32bit</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

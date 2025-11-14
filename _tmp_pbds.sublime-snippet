@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+
+using namespace __gnu_pbds;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+
+// change 'int' to any data type
+// less_equal for multiset increasing order
+// less for set increasing order
+// greater_equal for multiset decreasing order
+// greater for set decreasing order
+
+// *a.find_by_order(k) // iterator to the k-th element
+// a.order_of_key(k)  // number of items in a set that are strictly smaller than k
+
+// lower_bound, upper_bound also work in pbds
+// all functions are like set
+
+// https://github.com/Priyansh19077/YouTube-links/blob/main/PBDS.cpp
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_pbds</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

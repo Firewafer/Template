@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+int nearestPowerOf2(int N)
+{
+    int a = log2(N);
+ 
+    if (pow(2, a) == N)
+        return N;
+ 
+    return pow(2, a + 1);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_nearest_PowerOf2</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope>
+</snippet>

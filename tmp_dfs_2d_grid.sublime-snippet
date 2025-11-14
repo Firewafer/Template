@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+// dfs for 2D Grid
+const int MAX = 1000; // Max grid size
+int grid[MAX][MAX];
+int vis[MAX][MAX];
+
+bool possible(int x, int y, int n, int m){
+    // n -> row // m -> column
+    return (x<n && x>=0 && y<m && y>=0);
+}
+
+void dfs(int x,int y, int n, int m){
+  // vis -> 0 -> not visited // vis -> 1 -> visited
+  // grid -> 0 -> no path // grid -> 1 -> path
+  if(!possible(x,y,n,m) || vis[x][y]!=0 || grid[x][y]==0) return; 
+  vis[x][y]=1;
+  int dx[]={0,0,1,-1}; // For LRUD :: can add more values for diagonal movement
+  int dy[]={1,-1,0,0};
+  for(int i=0;i<4;i++){
+    int nx=x+dx[i],ny=y+dy[i];
+    dfs(nx,ny,n,m);
+  }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_dfs_2d_grid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

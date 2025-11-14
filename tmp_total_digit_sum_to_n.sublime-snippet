@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+// code from:
+// https://www.geeksforgeeks.org/dsa/count-sum-of-digits-in-numbers-from-1-to-n/
+int sumOfDigitsFrom1ToNUtil(int n, vector<int> &a) {
+    if (n < 10)
+        return (n * (n + 1) / 2);
+
+    int d = (int)(log10(n));
+    int p = (int)(ceil(pow(10, d)));
+    int msd = n / p;
+
+    return (msd * a[d] + (msd * (msd - 1) / 2) * p 
+            + msd * (1 + n % p) + sumOfDigitsFrom1ToNUtil(n % p, a));
+}
+int sumOfDigits(int n) {
+    int d = max(((int)(log10(n))), 1LL);
+    vector<int> a(d + 1);
+    a[0] = 0;
+    a[1] = 45;
+
+    for (int i = 2; i <= d; i++)
+        a[i] = a[i - 1] * 10 + 45 * (int)(ceil(pow(10, i - 1)));
+
+    return sumOfDigitsFrom1ToNUtil(n, a);
+}
+
+// https://www.geeksforgeeks.org/dsa/count-total-number-digits-1-n/
+int totalDigits(int n)
+{
+    int number_of_digits = 0;
+    for(int i = 1; i <= n; i *= 10)
+        number_of_digits += (n - i + 1);
+
+    return number_of_digits;
+}
+]]></content>
+		<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_total_digit_sum_to_n</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

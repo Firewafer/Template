@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"Acme Color Scheme",
+		"Base16 Color Schemes",
+		"Colored Comments",
+		"CppFastOlympicCoding",
+		"Dracula Color Scheme",
+		"EasyClangComplete",
+		"GitHub Theme",
+		"GitHubChecks",
+		"Material Theme",
+		"One Dark Material - Theme",
+		"Package Control",
+		"Theme - Darkmatter",
+		"Visual Studio Code Plus Scheme",
+		"Visual Studio Dark",
+	],
+}

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+int binExpoItr(int a, int b){
+  int ans = 1LL;
+  while(b>0){
+    if(b&1){ // if the last bit is set
+      ans *= a;
+    }
+    a *= a;
+    b >>= 1;
+  }
+  return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_binary_expon_itr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+sort(v.begin(), v.end());
+int i = 0;
+int j = 1;
+while(j < n and i < n) {
+   if(v[i] + abs(k) == v[j]) {
+    ans = true; // found the k
+    break;
+   }
+   else if(v[i] + abs(k) < v[j]) ++i;
+   else ++j;
+ }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_difference_of_two_element_in_array_equal_k</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+// Code from:
+// https://www.geeksforgeeks.org/dsa/merging-intervals/
+vector<vector<int>> mergeOverlap(vector<vector<int>>& arr) {
+
+    // Sort intervals based on start values
+    sort(arr.begin(), arr.end());
+  
+    vector<vector<int>> res;
+    res.push_back(arr[0]);
+
+    for (int i = 1; i < arr.size(); i++) {
+        vector<int>& last = res.back();
+        vector<int>& curr = arr[i];
+
+        // If current interval overlaps with the last merged
+        // interval, merge them 
+        if (curr[0] <= last[1]) 
+            last[1] = max(last[1], curr[1]);
+        else 
+            res.push_back(curr);
+    }
+
+    return res;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_merge_overlap_intervals</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

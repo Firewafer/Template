@@ -1,0 +1,55 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+    "variables":
+    {
+        "background": "#fff",
+        "cursor": "#750491",
+        "comments": "#0099ad",
+    },
+    "globals":
+    {
+        "bracket_contents_foreground": "#ff0030",
+        "bracket_contents_options": "bold",
+        "brackets_foreground": "#ff0030",
+        "brackets_options": "bold",
+    },
+    "rules":
+    [
+         {
+            "scope": "constant,entity.name.constant,variable.other.constant,variable.other.object,variable.language,entity",
+            "foreground": "#1aab21",
+            "font_style": "bold",
+        },
+        {
+            "scope": "comment,comment.block,comment.line,comment.block.documentation,punctuation.definition.comment,meta.toc-list",
+            "foreground": "var(comments)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "variable",
+            "foreground": "#03b3ff",
+            "font_style": "bold"
+        },
+         {
+            "scope": "string,punctuation.definition.string,string punctuation.section.embedded source",
+            "foreground": "#db078d",
+            "font_style": "bold"
+        },
+        {
+            "scope": "keyword",
+            "foreground": "#000",
+            "font_style": "bold"
+        },
+          {
+            "scope": "storage,storage.type",
+            "foreground": "#0423b0",
+            "font_style": "bold"
+        },
+        {
+            "scope": "variable.function,entity.name.function,meta.export.default variable.other.readwrite,meta.tag.attributes variable.other.readwrite,entity.name",
+            "foreground": "#000",
+             "font_style": "bold"
+        },
+
+    ]
+}

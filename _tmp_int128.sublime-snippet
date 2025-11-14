@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+void print128(__int128_t num) {
+    if (num < 0) {
+        std::cout << "-";
+        num = -num;
+    }
+    if (num > 9) {
+        print128(num / 10);
+    }
+    std::cout << static_cast<int>(num % 10);
+}
+
+__int128 read() {
+    __int128 x = 0, f = 1;
+    char ch = getchar();
+    while (ch < '0' || ch > '9') {
+        if (ch == '-') f = -1;
+        ch = getchar();
+    }
+    while (ch >= '0' && ch <= '9') {
+        x = x * 10 + ch - '0';
+        ch = getchar();
+    }
+    return x * f;
+
+    /*
+        __int128_t a =  read();
+    __int128_t b = read();
+    __int128_t result = (a * b);
+
+    print128(result);
+    std::cout << std::endl;
+    */
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_int128</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

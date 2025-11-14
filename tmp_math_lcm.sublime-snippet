@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+int lcm(int a, int b){
+   //lcm(a,b) * gcd(a,b) = a * b
+   int ml = a*b;
+   int gcd = __gcd(a,b);
+   return ml/gcd;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_tmp_math_lcm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

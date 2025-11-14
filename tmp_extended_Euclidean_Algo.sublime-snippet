@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+pair<int,int> extendedEuclideanAlgo(int a, int b){
+  if(b == 0) return {1,0};
+
+  pair<int,int> d = extendedEuclideanAlgo(b, a%b);
+  return {d.second, d.first-d.second*(a/b)};
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_extended_Euclidean_Algo</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope>
+</snippet>

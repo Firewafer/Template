@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+// Disjoint Set Union
+int p[1000];
+int setsize[1000];
+
+int find(int x){
+  // 0 means x is the parent of x
+  if(p[x]==0){
+    if(setsize[x]==0) setsize[x] = 1;
+    return x;
+  }
+  return p[x] = find(p[x]);
+}
+void setUnion(int a, int b){
+  // a -> parent and b -> child
+  int fi_b = find(b);
+  int fi_a = find(a);
+  p[fi_b] = fi_a;
+  setsize[fi_a] += setsize[fi_b];
+}
+int findSize(int x){
+  // size of the set which x belongs to
+  return setsize[find(x)];
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>_tmp_disjoint_set_union</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

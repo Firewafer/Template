@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+int const MAXN = (int)1e7 + 5;
+
+vector<int> spf(MAXN + 1, 1);
+
+//from
+//https://www.geeksforgeeks.org/dsa/prime-factorization-using-sieve-olog-n-multiple-queries/
+// Time Complexity : O(nloglogn)
+
+void sieve()
+{
+
+    spf[0] = 0;
+    for (int i = 2; i <= MAXN; i++) {
+        if (spf[i] == 1) { 
+            for (int j = i; j <= MAXN; j += i) {
+                if (spf[j]== 1)
+                    spf[j] = i;
+            }
+        }
+    }
+}
+
+//log(n)
+vector<int> getFactorization(int x)
+{
+    vector<int> ret;
+    while (x != 1) {
+        ret.push_back(spf[x]);
+        x = x / spf[x];
+    }
+    return ret;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_prime_fact_logn</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

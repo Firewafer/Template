@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+const int N  = (int) 1e6+5;
+struct Disjoint_Set_Union{
+    int parent[N];
+    int size[N];
+
+    void init(int n){
+        for(int i=0;i<=n;i++){
+            parent[i]=i;
+            size[i]=1;
+        }
+    }
+
+    int find_root(int x){
+        if(x == parent[x]) return x;
+        return parent[x] = find_root(parent[x]);
+    }
+
+    void unite(int u,int v){
+        int root_u = find_root(u);
+        int root_v = find_root(v);
+
+        if(root_u != root_v){
+            if(size[root_u] < size[root_v]){
+                swap(root_u, root_v);
+            }
+            parent[root_v] = parent[root_u];
+            size[root_u] += size[root_v];
+        }
+    }
+};
+/*    Disjoint_Set_Union d1;
+   Disjoint_Set_Union d2;
+   d1.init(n);
+   d2.init(n);
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_DSU</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

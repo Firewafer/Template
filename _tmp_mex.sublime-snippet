@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+int const MAX_N = (int)1e5 + 5;
+
+// From
+// https://cp-algorithms.com/sequences/mex.html
+//O(n)
+int mex(vector<int> const& A) {
+    static bool used[MAX_N+1] = { 0 };
+
+    // mark the given numbers
+    for (int x : A) {
+        if (x <= MAX_N)
+            used[x] = true;
+    }
+
+    // find the mex
+    int result = 0;
+    while (used[result])
+        ++result;
+
+    // clear the array again
+    for (int x : A) {
+        if (x <= MAX_N)
+            used[x] = false;
+    }
+
+    return result;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_tmp_mex</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+const int vtex = 1e5 + 5;
+vector<int> graph[vtex];
+vector<int> vis(vtex); // 0 -> NOT VISITED
+
+// TC:: O(Ver+Edg)
+
+void dfsAdjList(int vertext){
+  // Take action on Vertext after Visiting to Vertext
+  if(vis[vertext]==1) return;
+  vis[vertext] = 1;
+
+  for(int child: graph[vertext]){
+    // Take action on child before Visting the Child
+    //if(vis[child]==1) continue;
+
+    // Recursive call of DFS
+    dfsAdjList(child);
+
+    // Take action on child after Exiting the child node
+  }
+
+   // Take action on Vertext Before Extiing the Vertext
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>_tmp_dfs_adj_list</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

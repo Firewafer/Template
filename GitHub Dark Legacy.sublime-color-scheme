@@ -1,0 +1,47 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables":
+	{
+		"background": "#010081",
+		"comments": "#4e4dc4",
+      "foreground": "#fff",
+      
+	},
+	"globals":
+	{
+	},
+	"rules":
+	[
+		{
+            "scope": "constant,entity.name.constant,variable.other.constant,variable.other.object,variable.language,entity",
+            "foreground": "#2af5eb",
+            "font_style": "bold",
+        },
+        {
+            "scope": "variable",
+            "foreground": "#1dcf55",
+            "font_style": "bold"
+        },
+         {
+            "scope": "string,punctuation.definition.string,string punctuation.section.embedded source",
+            "foreground": "#db078d",
+            "font_style": "bold"
+        },
+        {
+            "scope": "keyword",
+            "foreground": "#d2eafa",
+            "font_style": "bold"
+        },
+          {
+            "scope": "storage,storage.type",
+            "foreground": "#e1ff69",
+            "font_style": "bold"
+        },
+        {
+            "scope": "variable.function,entity.name.function,meta.export.default variable.other.readwrite,meta.tag.attributes variable.other.readwrite,entity.name",
+            "foreground": "#18a605",
+             "font_style": "bold"
+        },
+
+	]
+}
